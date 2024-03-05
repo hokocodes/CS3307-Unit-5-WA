@@ -2,6 +2,7 @@
 # Sample Bash Script for Automating Report Download and Organization
 
 # Define the URL of the report and the destination folder
+LOGIN_URL="https://my.uopeople.edu/login/index.php"  # Replace with the actual login URL
 REPORT_URL="https://my.uopeople.edu/pluginfile.php/1827750/mod_book/chapter/484710/Sample-Spreadsheet-1000-rows.csv"
 DESTINATION_FOLDER="/path/to/folder"
 
@@ -16,6 +17,8 @@ authenticate() {
     wget --save-cookies cookies.txt \
      --keep-session-cookies \
      --post-data 'user=$USERNAME&password=$PASSWORD' \
+     --delete-after \
+         "$LOGIN_URL"
 }
 
 # Function to download the report using wget
