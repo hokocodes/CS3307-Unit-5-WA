@@ -7,29 +7,19 @@ REPORT_URL="https://my.uopeople.edu/pluginfile.php/1827750/mod_book/chapter/4847
 DESTINATION_FOLDER="/home/mint/CS3307-Unit-5-WA"
 
 # Prompt the user for their username and password
-echo "Please enter your username:"
-read USERNAME
-echo "Please enter your password:"
-read -s PASSWORD  # The -s flag hides the input for privacy
+USERNAME = C1281972
 
 authenticate() {
     echo "Authenticating..."
-    wget --save-cookies cookies.txt \
+    wget --user-agent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; Trident/6.0)" \
+    --save-cookies cookies.txt \
      --keep-session-cookies \
-     --post-data 'username=$USERNAME&password=$PASSWORD' \
-     --delete-after \
-         "$LOGIN_URL"
-}
-
-# Function to download the report using wget
-download_report() {
-    echo "Downloading the report..."
-    wget --load-cookies cookies.txt \
-         --user "$USERNAME" \
-         --password "$PASSWORD" \
-         --content-disposition \
-         -O "${DESTINATION_FOLDER}/report.csv" \
-         "$REPORT_URL"
+     --user $USERNAME \
+     --ask-password \
+     --max-redirect=10 \
+     --trust-server-names \
+     -O "${DESTINATION_FOLDER}/report.csv" \
+     "$REPORT_URL"
 }
 
 # Function to organize the report by moving it to the designated folder
@@ -39,6 +29,6 @@ organize_report() {
 }
 
 # Main script execution
-download_report
+authenticate
 organize_report
 echo "Report download and organization complete."
