@@ -16,7 +16,7 @@ authenticate() {
     echo "Authenticating..."
     wget --save-cookies cookies.txt \
      --keep-session-cookies \
-     --post-data 'user=$USERNAME&password=$PASSWORD' \
+     --post-data 'username=$USERNAME&password=$PASSWORD' \
      --delete-after \
          "$LOGIN_URL"
 }
