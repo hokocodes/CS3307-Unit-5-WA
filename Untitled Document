@@ -1,0 +1,25 @@
+mint@mint:~/CS3307-Unit-5-WA$ chmod +x unit5.sh
+mint@mint:~/CS3307-Unit-5-WA$ ./unit5.sh
+Please enter your username:
+C1281972
+Please enter your password:
+Downloading the report...
+--2024-03-05 19:55:53--  https://my.uopeople.edu/pluginfile.php/1827750/mod_book/chapter/484710/Sample-Spreadsheet-1000-rows.csv
+Resolving my.uopeople.edu (my.uopeople.edu)... 107.22.124.136, 35.169.145.4
+Connecting to my.uopeople.edu (my.uopeople.edu)|107.22.124.136|:443... connected.
+HTTP request sent, awaiting response... 303 See Other
+Location: https://my.uopeople.edu/login/index.php [following]
+--2024-03-05 19:55:54--  https://my.uopeople.edu/login/index.php
+Reusing existing connection to my.uopeople.edu:443.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘/home/mint/CS3307-Unit-5-WA/report.csv’
+
+/home/mint/CS3307-U     [ <=>                ]  39.62K  --.-KB/s    in 0.07s   
+
+2024-03-05 19:55:54 (575 KB/s) - ‘/home/mint/CS3307-Unit-5-WA/report.csv’ saved [40570]
+
+Organizing the report...
+mv: cannot move '/home/mint/CS3307-Unit-5-WA/report.csv' to '/home/mint/CS3307-Unit-5-WA/organized_reports/': Not a directory
+Report download and organization complete.
+
