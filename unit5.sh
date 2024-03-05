@@ -4,7 +4,7 @@
 # Define the URL of the report and the destination folder
 LOGIN_URL="https://my.uopeople.edu/login/index.php"  # Replace with the actual login URL
 REPORT_URL="https://my.uopeople.edu/pluginfile.php/1827750/mod_book/chapter/484710/Sample-Spreadsheet-1000-rows.csv"
-DESTINATION_FOLDER="/path/to/folder"
+DESTINATION_FOLDER="/home/mint/CS3307-Unit-5-WA"
 
 # Prompt the user for their username and password
 echo "Please enter your username:"
