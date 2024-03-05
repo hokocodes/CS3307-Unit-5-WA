@@ -5,6 +5,19 @@
 REPORT_URL="https://my.uopeople.edu/pluginfile.php/1827750/mod_book/chapter/484710/Sample-Spreadsheet-1000-rows.csv"
 DESTINATION_FOLDER="/path/to/folder"
 
+# Prompt the user for their username and password
+echo "Please enter your username:"
+read USERNAME
+echo "Please enter your password:"
+read -s PASSWORD  # The -s flag hides the input for privacy
+
+authenticate() {
+    echo "Authenticating..."
+    wget --save-cookies cookies.txt \
+     --keep-session-cookies \
+     --post-data 'user=$USERNAME&password=$PASSWORD' \
+}
+
 # Function to download the report using wget
 download_report() {
     echo "Downloading the report..."
