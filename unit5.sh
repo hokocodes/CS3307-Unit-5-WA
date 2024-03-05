@@ -24,7 +24,12 @@ authenticate() {
 # Function to download the report using wget
 download_report() {
     echo "Downloading the report..."
-    wget -O "${DESTINATION_FOLDER}/report.csv" "$REPORT_URL"  # Using wget to download the file to the destination folder
+    wget --load-cookies cookies.txt \
+         --user "$USERNAME" \
+         --password "$PASSWORD" \
+         --content-disposition \
+         -O "${DESTINATION_FOLDER}/report.csv" \
+         "$REPORT_URL"
 }
 
 # Function to organize the report by moving it to the designated folder
